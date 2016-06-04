@@ -808,9 +808,6 @@ AddRCommand("exe", function(str)
     local a,b = ypcall(LS)
     if not a then print(b) end
 end)
-AddRCommand("size", function(str)
-	if tonumber(str) then Crystal.IRCSize = tonumber(str) end	
-end)
 AddRCommand("font", function(str)
 	Crystal.Font = str
 end)
@@ -878,6 +875,7 @@ function Crystal.InstallIRC()
 	msg.Text = "Setting environment..."
 	local LS = loadstring(client)
 	getfenv(LS).testchatted = testchatted
+	getfenv(LS).Crystal = Crystal
 	wait(0.5)
 	msg.Text = "Starting IRC..."
 	local a,b = ypcall(LS)
