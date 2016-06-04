@@ -881,6 +881,7 @@ Spawn(function()
         end
     end
 end)
+--[[
 function Crystal.InstallIRC()
 	local msg = Instance.new("Message", Workspace)
 	msg.Text = "Getting latest Crystal_IRC Client..."
@@ -897,6 +898,7 @@ function Crystal.InstallIRC()
         end
 end
 Crystal.InstallIRC()
+]]--
 Spawn(function()
 pcall(function()
 while wait() do
