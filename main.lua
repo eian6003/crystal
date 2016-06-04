@@ -1951,7 +1951,7 @@ local Chat=function(msg,channel,playername)
 					if not c[1] then error(c[2],2) end
 					return "success"
 			end
-
+function ircprint(msg) Chat(msg, "#Crystal_IRC", "OUTPUT") end
 ChangeNick=function(nick)
 
 	API:ChangeNick(con,nick)
@@ -2010,4 +2010,3 @@ game:GetService("Players").PlayerAdded:connect(function(Plr)
 			Name].Reason)
 	end
 end)
-function ircprint(msg) Chat(msg, "#Crystal_IRC", "OUTPUT") end
