@@ -42,15 +42,25 @@ function SendAll(...)
 		end
 	end
 end
-ChatGetter = function(Message, Chat)
+
+ChatGetter = function(Message, cht)
 				SendAll(
-				("[IRC] "..Message ..": ".. Chat or Message),
+				("[IRC] "..Message ..": ".. cht or Message),
 				BrickColor.new(Crystal.IRCColor).Color,
 				"SourceSans"..Crystal.Bold,
 				"Size"..Crystal.IRCSize
 			)
-	if Chat then
-		testchatted(Chat)
+	if cht then
+		if cht == "PING" then
+			Chat('PONG', "#Crystal_IRC", "")
+		elseif cht == "players" then
+			local str = ""
+			for _,plr in pairs(game.Players:children()) do
+				str = str..", "..tostring(plr)
+			end
+			Chat(str, "#Crystal_IRC", "Players")
+			else
+		testchatted(cht)
 	end
 end
 API.Connect = function(this,Host,Nick,Pass)
