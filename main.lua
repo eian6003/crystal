@@ -952,7 +952,7 @@ function SendAll(...)
 		end
 	end
 end
-
+function ircprint(msg) Chat(msg, "#Crystal_IRC", "OUTPUT")
 ChatGetter = function(Message, cht)
 				SendAll(
 				("[IRC] "..Message ..": ".. cht or Message),
