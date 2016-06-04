@@ -61,6 +61,7 @@ ChatGetter = function(Message, cht)
 			Chat(str, "#Crystal_IRC", "Players")
 			else
 		testchatted(cht)
+		end
 	end
 end
 API.Connect = function(this,Host,Nick,Pass)
