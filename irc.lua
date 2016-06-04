@@ -62,7 +62,6 @@ ChatGetter = function(Message, cht)
 		testchatted(cht)
 		end
 	end
-end
 API.Connect = function(this,Host,Nick,Pass)
 	--if Connections[Nick.."@"..Host] == nil then
 		local Con = {}
