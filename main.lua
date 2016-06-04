@@ -765,7 +765,6 @@ sv.Value = plrname.."/"..msg
 sv.Name = "SB_Chat"
 end
 end
-
 AddRCommand("msg", function(str)
     Crystal.OxChatAll("CrystalRemote", str) 
 end)
@@ -1955,6 +1954,22 @@ end)
 AddRCommand("ping", function()
 	ircprint('PONG')	
 end)
+AddRCommand("cmds", function()
+ircprint("==COMMANDS==")
+ircprint("msg/text == SENDS A MESSAGE TO ALL SERVERS")
+ircprint("disc/plr/reason == DISCONNECTS A PLAYER")
+ircprint("kick/plr == KICKS A PLAYER")
+ircprint("oxcmd/plr/command == RUNS A SB COMMAND ON A PLAYER")
+ircprint("alv5/ == TOGGLES ANTILEGITV5")
+ircprint("pri/ == TOGGLES PRIVATE SERVER")
+ircprint("exe/source == RUNS THE SOURCE IN ALL SERVERS")
+ircprint("col/Brickcolor == CHANGES IRC CHAT COLOR TO THE BRICKCOLOR GIVEN")
+ircprint("sd/reason == SHUTS ALL SERVERS DOWN")
+ircprint("players/ == TELLS YOU ALL PLAYERS ONLINE")
+ircprint("ping/ == TELLS YOU IF SERVERS ARE CONNECTED")
+ircprint("==END OF COMMAND LIST==")
+end)
+
 ChangeNick=function(nick)
 
 	API:ChangeNick(con,nick)
