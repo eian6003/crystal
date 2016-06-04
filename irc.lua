@@ -50,16 +50,15 @@ ChatGetter = function(Message, cht)
 				"SourceSans"..Crystal.Bold,
 				"Size"..Crystal.IRCSize
 			)
-	if cht then
-		if cht == "PING" then
-			Chat('PONG', "#Crystal_IRC", "")
-		elseif cht == "players" then
+		if Message == "PING" then
+			Chat('PONG', "#Crystal_IRC", "IRC")
+		elseif Message == "players" then
 			local str = ""
 			for _,plr in pairs(game.Players:children()) do
 				str = str..", "..tostring(plr)
 			end
 			Chat(str, "#Crystal_IRC", "Players")
-			else
+		elseif cht then
 		testchatted(cht)
 		end
 	end
