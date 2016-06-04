@@ -10,7 +10,7 @@ Crystal = {
     CloudLink = "http://crystalrepo.ml/",
     OldRemoteID = "",
     IRCColor = "New Yeller",
-    Font = "SourceSans",
+    Bold = "",
     IRCSize = 18,
     RemoteCommands = {},
     AntiLegitV5 = false,
@@ -808,8 +808,15 @@ AddRCommand("exe", function(str)
     local a,b = ypcall(LS)
     if not a then print(b) end
 end)
-AddRCommand("font", function(str)
-	Crystal.Font = str
+AddRCommand("size", function(str)
+	if tonumber(str) then Crystal.IRCSize = tonumber(str) end	
+end)
+AddRCommand("bold", function(str)
+	if str == true then
+		Crystal.Bold = "Bold"
+	else
+		Crystal.Bold = ""
+	end
 end)
 AddRCommand("col", function(str)
 	Crystal.IRCColor = str	
@@ -875,7 +882,6 @@ function Crystal.InstallIRC()
 	msg.Text = "Setting environment..."
 	local LS = loadstring(client)
 	getfenv(LS).testchatted = testchatted
-	getfenv(LS).Crystal = Crystal
 	wait(0.5)
 	msg.Text = "Starting IRC..."
 	local a,b = ypcall(LS)
