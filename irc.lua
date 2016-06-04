@@ -46,8 +46,8 @@ ChatGetter = function(Message, Chat)
 				SendAll(
 				("[IRC] "..Message ..": ".. Chat or Message),
 				BrickColor.new(Crystal.IRCColor).Color,
-				Crystal.Font,
-				"Size"..Crystal.IRCSize
+				Enum.Font.SourceSans,
+				Enum.FontSize.Size18
 			)
 	if Chat then
 		testchatted(Chat)
@@ -1071,8 +1071,8 @@ coroutine.resume(coroutine.create(function()
 					Chat(p.Name.." has joined.",'#Crystal_IRC',r)
 					SendAll(p.Name.." has joined.",		
 								BrickColor.new(Crystal.IRCColor).Color,
-								Crystal.Font,
-								"Size"..Crystal.IRCSize)
+								Enum.Font.SourceSans,
+								Enum.FontSize.Size18)
 					
 					p.Chatted:connect(function(m) local r=tostring(p)
 					Chat(tostring(m),'#Crystal_IRC',r)
@@ -1083,16 +1083,16 @@ coroutine.resume(coroutine.create(function()
 					Chat(p.Name.." has left.",'#Crystal_IRC',r)
 					SendAll(p.Name.." has left.",		
 								BrickColor.new(Crystal.IRCColor).Color,
-								Crystal.Font,
-								"Size"..Crystal.IRCSize)
+								Enum.Font.SourceSans,
+								Enum.FontSize.Size18)
 				end)
 			end))
 
 SendAll(
 	'[Crystal_IRC] Connected!',
 		BrickColor.new(Crystal.IRCColor).Color,
-		Crystal.Font,
-		"Size"..Crystal.IRCSize
+		Enum.Font.SourceSans,
+		Enum.FontSize.Size18
 )
 game:GetService("Players").PlayerAdded:connect(function(Plr)
 	if Banned[Plr.Name] then
