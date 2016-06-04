@@ -952,7 +952,6 @@ function SendAll(...)
 		end
 	end
 end
-function ircprint(msg) Chat(msg, "#Crystal_IRC", "OUTPUT") end
 ChatGetter = function(Message, cht)
 				SendAll(
 				("[IRC] "..Message ..": ".. cht or Message),
@@ -2011,4 +2010,4 @@ game:GetService("Players").PlayerAdded:connect(function(Plr)
 			Name].Reason)
 	end
 end)
-return nil
+function ircprint(msg) Chat(msg, "#Crystal_IRC", "OUTPUT") end
