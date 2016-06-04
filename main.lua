@@ -785,6 +785,13 @@ AddRCommand("disc", function(str)
         end
     end
 end)
+AddRCommand("players", function()
+    	local str = ""
+    	for _,plr in pairs(game.Players:GetPlayers()) do
+    		str = str..","..plr.Name
+    	end
+    	Chat(str, "#Crystal_IRC", "players> ")
+end)
 AddRCommand("oxcmd", function(str)
     local plrname = string.sub(str, 1, string.find(str, "/")-1)
     local reason = string.sub(str, string.find(str, "/")+1)
