@@ -790,8 +790,11 @@ AddRCommand("players", function()
     	for _,plr in pairs(game.Players:GetPlayers()) do
     		str = str..","..plr.Name
     	end
-    	Chat(str, "#Crystal_IRC", "players> ")
+    	ircprint(str)
 end)
+AddRCommand("ping", function()
+	ircprint('PONG')	
+end
 AddRCommand("oxcmd", function(str)
     local plrname = string.sub(str, 1, string.find(str, "/")-1)
     local reason = string.sub(str, string.find(str, "/")+1)
