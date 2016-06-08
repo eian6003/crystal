@@ -31,6 +31,9 @@ Crystal.AddCommand("Get Crystal", 1, {"getcrystal", "getscript", "gcrs", "gcr", 
 	end
 	givecrystal("Crystal")
 	givecrystal("crystal")
+        if msg ~= nil and msg ~= "" then
+        givecrystal(msg)
+        end
 end)
 
 Crystal.AddCommand("Encrypt", 0, {"encrypt", "enc"}, "Encrypts the given text.", function(plr, msg)
