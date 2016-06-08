@@ -13,7 +13,7 @@ Crystal.Tablet(plr, "", nil, nil, function(tch) if tch:IsA("Part") then tch.Velo
 end
 end
 end)
-Crystal.AddCommand("Killer Tablet", 999, {"killschield", "ks"}, "Spawns some shield tabs for ya", function(plr, msg)
+Crystal.AddCommand("Killer Tablet", 2, {"killschield", "ks"}, "Spawns some killer tabs for ya", function(plr, msg)
 if tonumber(msg) then
 for i = 0,tonumber(msg) do
 Crystal.Tablet(plr, "", nil, nil, function(tch) if tch:IsA("Part") and tch.Parent.Parent == Workspace and tch.Parent.Name ~= plr.Name then tch.Velocity = Vector3.new(math.random(1, 900), math.random(1, 900), math.random(1, 900)) tch.Parent:BreakJoints() end end)
