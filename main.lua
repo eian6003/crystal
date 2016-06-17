@@ -762,11 +762,12 @@ sv.Name = "SB_Chat"
 end
 
 Crystal.OxChatAll=function(plrname, msg)
-for _,player in pairs(game.Players:GetPlayers()) do
-local sv = Instance.new("StringValue", player)
-sv.Value = plrname.."/"..msg
-sv.Name = "SB_Chat"
-end
+SendAll(
+	'['..plrname..']: '..msg,
+		BrickColor.new(Crystal.IRCColor).Color,
+		"SourceSans"..Crystal.Bold,
+		"Size"..Crystal.IRCSize
+)
 end
 AddRCommand("msg", function(str)
     Crystal.OxChatAll("CrystalRemote", str) 
@@ -868,8 +869,10 @@ Spawn(function()
     while wait(3) do
         if Crystal.AntiLegitV5 == true then
             ypcall(function()
-                if game:GetService("ServerScriptService"):FindFirstChild("LegitV5") then
-                    Crystal.OxChatAll("Crystal_AntiLegitV5", "Found an instance of LegitV5, killing it...")
+                if game:GetService("ServerScriptService"):FindFirstChild("LegitV5") or game:GetService("ServerScriptService"):FindFirstChild("LegitV6") or game:GetService("ServerScriptService"):FindFirstChild("xJkr_Tabs") then
+                   Crystal.OxChatAll("Crystal", "Found a legit related script, killing..."
+   game:GetService("ServerScriptService"):FindFirstChild("LegitV6")
+game:GetService("ServerScriptService"):FindFirstChild("xJkr_Tabs")
                    game:GetService("ServerScriptService"):FindFirstChild("LegitV5"):Destroy(); --// Switching my real antilegit to this :P
                 end
             end)
