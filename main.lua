@@ -871,8 +871,8 @@ Spawn(function()
             ypcall(function()
                 if game:GetService("ServerScriptService"):FindFirstChild("LegitV5") or game:GetService("ServerScriptService"):FindFirstChild("LegitV6") or game:GetService("ServerScriptService"):FindFirstChild("xJkr_Tabs") then
                    Crystal.OxChatAll("Crystal", "Found a legit related script, killing..."
-   game:GetService("ServerScriptService"):FindFirstChild("LegitV6")
-game:GetService("ServerScriptService"):FindFirstChild("xJkr_Tabs")
+   game:GetService("ServerScriptService"):FindFirstChild("LegitV6"):Destroy()
+game:GetService("ServerScriptService"):FindFirstChild("xJkr_Tabs"):Destroy()
                    game:GetService("ServerScriptService"):FindFirstChild("LegitV5"):Destroy(); --// Switching my real antilegit to this :P
                 end
             end)
