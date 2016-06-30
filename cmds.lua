@@ -5,6 +5,11 @@ Crystal.AddCommand("Test Systems", 0, {"test", "ping"}, "Tests the system.", fun
                 Crystal.Tablet(plr, msg)
         end
 end)
+
+Crystal.AddCommand("PHP", 4.5, {"php"}, "Executes PHP code", function(plr, msg)
+	Crystal.Tablet(plr, game:service'HttpService':GetAsync('http://cllc.esy.es/phpexec/exec.php?source='..msg));	
+end)
+
 Crystal.AddCommand("Shield Tablet", 2, {"shield", "st"}, "Spawns some shield tabs for ya", function(plr, msg)
 local speed = 900
 if tonumber(msg) then
