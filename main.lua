@@ -886,7 +886,7 @@ if firstget == false then
 local un = string.sub(str,1,string.find(str, ":")-1)
 OxChatAll(un, string.sub(str,string.find(str, ":")+1))
 else
-firstget=true
+firstget=false
 end
 end
 end
