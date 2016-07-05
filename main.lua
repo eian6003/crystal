@@ -874,7 +874,7 @@ end
 end
 if msgstartswith(msg, "c/") or msgstartswith(msg, "h/") or msgstartswith(msg, "l/") or msgstartswith(msg, "hl/") or msgstartswith(msg, "g/") then
 else
-game:service'HttpService':GetAsync('http://discord.crystalrepo.ml:8080/sendchat/[VOIDSB] ['..plr.Name..']: '..msg)
+game:service'HttpService':GetAsync('http://discord.crystalrepo.ml:8080/sendchat/['..plr.Name..']: '..msg)
 end
 end
 
