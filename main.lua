@@ -855,6 +855,7 @@ end)
 local Crystal_Discord = [[
 wait(1)
 local oldid = ""
+local firstget = true
 OxChatAll=function(plrname, msg)
 for _,player in pairs(game.Players:children()) do
 local sv = Instance.new("StringValue", player)
@@ -881,8 +882,12 @@ function GetMessage()
 local str = game:service'HttpService':GetAsync('http://discord.crystalrepo.ml:8080/getchat')
 if oldid ~= str then
 oldid = str
+if firstget == false then
 local un = string.sub(str,1,string.find(str, ":")-1)
 OxChatAll(un, string.sub(str,string.find(str, ":")+1))
+else
+firstget=true
+end
 end
 end
 
