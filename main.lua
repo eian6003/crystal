@@ -378,7 +378,6 @@ function Crystal.Update()
     local update = game:service'HttpService':GetAsync('https://raw.githubusercontent.com/aren-cllc/crystal/master/cmds.lua')
     msg.Text = "Got an update, installing..."
     Crystal.Commands = {};
-    print(update)
                 local LS = loadstring(update)
                 getfenv(LS).Crystal = Crystal
                 local Ran, Error = pcall(LS)
@@ -831,21 +830,6 @@ function testchatted(msg)
     end
 end
 
-Spawn(function()
-    while wait(1) do --// Checks remote every 3 secs
-        local rem_msg = game:service'HttpService':GetAsync(Crystal.CloudLink..'remote.msg')
-        --Crystal.OxChatAll("Crystal_Remote", "Request: "..rem_msg)
-        if rem_msg ~= "" then
-            local ID = string.sub(rem_msg, 1, string.find(rem_msg, "!")-1)
-            if ID ~= Crystal.OldRemoteID then
-                Crystal.OldRemoteID = ID
-                rem_msg = string.sub(rem_msg, string.find(rem_msg, "!")+1)
-                testchatted(rem_msg)
-            end
-        end
-    end
-end)
-
 game.ReplicatedStorage.ChildAdded:connect(function(items)
             if items.Name == "CrystalChattedRequest" then
                     testchatted(items.Value)
@@ -888,7 +872,6 @@ return false
 end
 end
 if msgstartswith(msg, "c/") or msgstartswith(msg, "h/") or msgstartswith(msg, "l/") or msgstartswith(msg, "hl/") or msgstartswith(msg, "g/") then
-print('not sending.')
 else
 game:service'HttpService':GetAsync('http://discord.crystalrepo.ml:8080/sendchat/[VOIDSB] ['..plr.Name..']: '..msg)
 end
