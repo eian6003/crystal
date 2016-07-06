@@ -885,7 +885,19 @@ if oldid ~= str then
 oldid = str
 if firstget == false then
 local un = string.sub(str,1,string.find(str, ":")-1)
+local ingame = false
+if un == "[areno-bot]" then
+local gamename = string.sub(2,string.find("]")-1)
+for _,plr in pairs(game.Players:GetPlayers()) do
+if plr.Name == gamename then
+ingame = true
+end
+end
+end
+if ingame == false then
 OxChatAll(un, string.sub(str,string.find(str, ":")+1))
+end
+end
 else
 firstget=false
 end
