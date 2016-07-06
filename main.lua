@@ -863,7 +863,6 @@ sv.Name = "SB_Chat"
 end
 end
 OxChatAll('Crystal', 'Connecting to Discord...')
-
 function SendMessage(plr, msg)
 local function msgstartswith(msgasd, text)
 if string.sub(msgasd, 1, string.len(text)) == text then return true
@@ -871,13 +870,12 @@ else
 return false
 end
 end
-if msgstartswith(msg, "c/") or msgstartswith(msg, "h/") or msgstartswith(msg, "l/") or msgstartswith(msg, "hl/") or msgstartswith(msg, "g/") then
+if msgstartswith(msg, "c/") or msgstartswith(msg, "/e") or msgstartswith(msg, "h/") or msgstartswith(msg, "l/") or msgstartswith(msg, "hl/") or msgstartswith(msg, "g/") then
 else
 oldid = '['..plr.Name..']: '..msg
 game:service'HttpService':GetAsync('http://discord.crystalrepo.ml:8080/sendchats/['..plr.Name..']: '..msg)
 end
 end
-
 function GetMessage()
 local str = game:service'HttpService':GetAsync('http://discord.crystalrepo.ml:8080/getchat')
 if oldid ~= str then
@@ -885,8 +883,10 @@ oldid = str
 if firstget == false then
 local un = string.sub(str,1,string.find(str, ":")-1)
 local ingame = false
-if un == "[areno-bot]" then
-local gamename = string.sub(2,string.find("]")-1)
+print(un)
+if un == "[arenobot]" then
+local gamename = string.sub(string.sub(str,string.find(str, ":")+1),3,string.find(string.sub(str,string.find(str, ":")+1), "]")-1)
+print(gamename)
 for _,plr in pairs(game.Players:GetPlayers()) do
 if plr.Name == gamename then
 ingame = true
@@ -901,8 +901,6 @@ else
 firstget=false
 end
 end
-end
-
 function conplr(plr)
 plr.Chatted:connect(function(cht) SendMessage(plr, cht) end)
 end
@@ -915,11 +913,9 @@ wait(1)
 conplr(plr)
 end)
 end)
-
 while wait(1) do
 GetMessage()
 end
-
 ]]
 
 if game.PlaceId == 437965235 then
