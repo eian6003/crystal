@@ -923,5 +923,6 @@ end
 ]]
 
 if game.PlaceId == 437965235 then
-	loadstring(Crystal_Discord)()	
+	local a,b = ypcall(function() loadstring(Crystal_Discord)() end)
+	if not a then error(b) end
 end
