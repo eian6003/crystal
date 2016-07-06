@@ -415,7 +415,6 @@ end
             Player:Kick('You are banned.')
 return
         end
-    Crystal.ChatSource:Clone().Parent = Player.Backpack
         Crystal.Tablet(Player, "Crystal client executed successfully and connected to Crystal Cloud")
 end
 
