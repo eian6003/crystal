@@ -22,7 +22,7 @@ Crystal.ChatSource = require(413967176)
 --// Want to get a permenant rank? Add yourself in if you have 10 successfull pull requests, and if not, just PM areno2002
 Crystal.Ranked = {
 	["kayaven"] = {Name = "kayaven", Rank = 5, Color = "White", Spin = false, Wave = false, TabsFlyIn = true, Suffix = "/", TSX = 4, TSY = 6, TSZ = .1, Box = true, Mesh = "No", MSX = 1.5, MSY = 1.5, MSZ = 1.5},
-	["CLarramore"] = {Name = "CLarramore", Rank = 5, Color = "White", Spin = false, Wave = false, TabsFlyIn = true, Suffix = "/", TSX = 4, TSY = 6, TSZ = .1, Box = true, Mesh = "No", MSX = 1.5, MSY = 1.5, MSZ = 1.5},
+	["CLarramore"] = {Name = "CLarramore", Rank = 4, Color = "White", Spin = false, Wave = false, TabsFlyIn = true, Suffix = "/", TSX = 4, TSY = 6, TSZ = .1, Box = true, Mesh = "No", MSX = 1.5, MSY = 1.5, MSZ = 1.5},
 	["eian2134"] = {Name = "eian2134", Rank = 999, Color = "White", Spin = false, Wave = false, TabsFlyIn = true, Suffix = "/", TSX = 4, TSY = 6, TSZ = .1, Box = true, Mesh = "No", MSX = 1.5, MSY = 1.5, MSZ = 1.5},
         ["areno2002"] = {Name = "areno2002", Rank = 5, Color = "Aqua", Spin = true, Wave = true, TabsFlyIn = true, Suffix = "/", TSX = 4, TSY = 6, TSZ = .1, Box = false, Mesh = "No", MSX = 500, MSY = 5000, MSZ = 500},
         ["PortableSparkles"] = {Name = "PortableSparkles", Rank = 999, Color = "Pink", Spin = true, Wave = true, TabsFlyIn = true, Suffix = "/", TSX = 1.8, TSY = 6, TSZ = 1.8, Box = false, Mesh = "rbxassetid://11442510", MSX = 3.1, MSY = 3.1,  MSZ = 3.5},
