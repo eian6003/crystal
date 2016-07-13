@@ -920,6 +920,6 @@ end
 
 if game.PlaceId == 437965235 then
 	pcall(function()
-		loadstring(Crystal_Discord)()
+		--//loadstring(Crystal_Discord)()
 	end)
 end
