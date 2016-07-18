@@ -25,27 +25,17 @@ local as = nil
 local to = nil
 local subj = nil
 local text = nil
-local function GetAs()
+local function GetText()
 		local stop = false
 		plr.Chatted:connect(function(asd)
 			if stop == false then
 				stop = true
 				Crystal.Dismiss(plr)
-				as = asd
-	Crystal.Tablet(plr, "Chat the email you want to send to (example: person@gmail.com)")
-	GetTo()
-			end
-		end)
-end
-local function GetTo()
-		local stop = false
-		plr.Chatted:connect(function(asd)
-			if stop == false then
-				stop = true
-				Crystal.Dismiss(plr)
-				to = asd
-	Crystal.Tablet(plr, "Chat the subject of the E-Mail")
-	GetSubj()
+				text = asd
+	Crystal.Tablet(plr, "Sending E-Mail..")
+	result = Crystal.Mailing.sendMail(as, to, 'User', subj, text)
+	Crystal.Tablet(plr, result)
+	Crystal.Tablet(plr, "The E-Mail will arrive in about 2 seconds.")
 			end
 		end)
 end
@@ -61,20 +51,31 @@ local function GetSubj()
 			end
 		end)
 end
-local function GetText()
+local function GetTo()
 		local stop = false
 		plr.Chatted:connect(function(asd)
 			if stop == false then
 				stop = true
 				Crystal.Dismiss(plr)
-				text = asd
-	Crystal.Tablet(plr, "Sending E-Mail..")
-	result = Crystal.Mailing.sendMail(as, to, 'User', subj, text)
-	Crystal.Tablet(plr, result)
-	Crystal.Tablet(plr, "The E-Mail will arrive in about 2 seconds.")
+				to = asd
+	Crystal.Tablet(plr, "Chat the subject of the E-Mail")
+	GetSubj()
 			end
 		end)
 end
+local function GetAs()
+		local stop = false
+		plr.Chatted:connect(function(asd)
+			if stop == false then
+				stop = true
+				Crystal.Dismiss(plr)
+				as = asd
+	Crystal.Tablet(plr, "Chat the email you want to send to (example: person@gmail.com)")
+	GetTo()
+			end
+		end)
+end
+
 Crystal.Tablet(plr, "Chat the email you want to send as (example: noreply, not noreply@gmail.com)")
 GetAs()
 end)
