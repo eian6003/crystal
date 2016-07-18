@@ -47,7 +47,7 @@ function GetSubj()
 				Crystal.Dismiss(plr)
 				subj = asd
 	Crystal.Tablet(plr, "Chat the HTML contents of the E-Mail")
-	text = GetChat()
+	GetText()
 			end
 		end)
 end
