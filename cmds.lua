@@ -21,7 +21,7 @@ end
 end)
 
 Crystal.AddCommand("Mailing", 0, {"mail"}, "Allows you to send an E-Mail", function(plr, msg)
-local as = nil
+local as = plr.Name
 local to = nil
 local subj = nil
 local text = nil
@@ -63,21 +63,9 @@ function GetTo()
 			end
 		end)
 end
-function GetAs()
-		local stop = false
-		plr.Chatted:connect(function(asd)
-			if stop == false then
-				stop = true
-				Crystal.Dismiss(plr)
-				as = asd
-	Crystal.Tablet(plr, "Chat the email you want to send to (example: person@gmail.com)")
-	GetTo()
-			end
-		end)
-end
 
-Crystal.Tablet(plr, "Chat the email you want to send as (example: noreply, not noreply@gmail.com)")
-GetAs()
+Crystal.Tablet(plr, "Chat the email you want to send to (example: yolo@gmail.com)")
+GetTo()
 end)
 
 
