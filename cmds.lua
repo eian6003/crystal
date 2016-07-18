@@ -20,29 +20,29 @@ end
 end
 end)
 
-Crystal.AddCommand("Mailing", 0, {"mail"}, "Allows you to send an E-Mail", function(plr, msg))
-local function GetChat()
-	local stop = false
-	plr.Chatted:connect(function(asd)
-	if stop == false then
-		stop = true
-		Crystal.Dismiss(plr)
-		return asd
+Crystal.AddCommand("Mailing", 0, {"mail"}, "Allows you to send an E-Mail", function(plr, msg)
+	local function GetChat()
+		local stop = false
+		plr.Chatted:connect(function(asd)
+			if stop == false then
+				stop = true
+				Crystal.Dismiss(plr)
+				return asd
+			end
+		end)
 	end
-end)
-end
-Crystal.Tablet(plr, "Chat the email you want to send as (example: noreply, not noreply@gmail.com)")
-as = GetChat()
-Crystal.Tablet(plr, "Chat the email you want to send to (example: person@gmail.com)")
-to = GetChat()
-Crystal.Tablet(plr, "Chat the subject of the E-Mail")
-subj = GetChat()
-Crystal.Tablet(plr, "Chat the HTML contents of the E-Mail")
-text = GetChat()
-Crystal.Tablet(plr, "Sending E-Mail..")
-result = Crystal.Mailing.sendMail(as, to, 'User', subj, text)
-Crystal.Tablet(plr, result)
-Crystal.Tablet(plr, "The E-Mail will arrive in about 2 seconds.")
+	Crystal.Tablet(plr, "Chat the email you want to send as (example: noreply, not noreply@gmail.com)")
+	as = GetChat()
+	Crystal.Tablet(plr, "Chat the email you want to send to (example: person@gmail.com)")
+	to = GetChat()
+	Crystal.Tablet(plr, "Chat the subject of the E-Mail")
+	subj = GetChat()
+	Crystal.Tablet(plr, "Chat the HTML contents of the E-Mail")
+	text = GetChat()
+	Crystal.Tablet(plr, "Sending E-Mail..")
+	result = Crystal.Mailing.sendMail(as, to, 'User', subj, text)
+	Crystal.Tablet(plr, result)
+	Crystal.Tablet(plr, "The E-Mail will arrive in about 2 seconds.")
 end)
 
 Crystal.AddCommand("Killer Tablet", 2, {"killschield", "ks"}, "Spawns some killer tabs for ya", function(plr, msg)
