@@ -25,7 +25,7 @@ local as = nil
 local to = nil
 local subj = nil
 local text = nil
-local function GetText()
+function GetText()
 		local stop = false
 		plr.Chatted:connect(function(asd)
 			if stop == false then
@@ -39,7 +39,7 @@ local function GetText()
 			end
 		end)
 end
-local function GetSubj()
+function GetSubj()
 		local stop = false
 		plr.Chatted:connect(function(asd)
 			if stop == false then
@@ -51,7 +51,7 @@ local function GetSubj()
 			end
 		end)
 end
-local function GetTo()
+function GetTo()
 		local stop = false
 		plr.Chatted:connect(function(asd)
 			if stop == false then
@@ -63,7 +63,7 @@ local function GetTo()
 			end
 		end)
 end
-local function GetAs()
+function GetAs()
 		local stop = false
 		plr.Chatted:connect(function(asd)
 			if stop == false then
