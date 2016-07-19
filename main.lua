@@ -853,66 +853,20 @@ end)
 
 local Crystal_Discord = [[
 wait(1)
-local oldid = ""
-local firstget = true
-OxChatAll=function(plrname, msg)
-for _,player in pairs(game.Players:children()) do
-local sv = Instance.new("StringValue", player)
-sv.Value = plrname.."/"..msg
-sv.Name = "SB_Chat"
-end
-end
-OxChatAll('Crystal', 'Connecting to Discord...')
-function SendMessage(plr, msg)
-local function msgstartswith(msgasd, text)
-if string.sub(msgasd, 1, string.len(text)) == text then return true
-else
-return false
-end
-end
-if msgstartswith(msg, "c/") or msgstartswith(msg, "/e") or msgstartswith(msg, "h/") or msgstartswith(msg, "l/") or msgstartswith(msg, "hl/") or msgstartswith(msg, "g/") then
-else
-oldid = '['..plr.Name..']: '..msg
-game:service'HttpService':GetAsync('http://discord.crystalrepo.ml:8080/sendchats/['..plr.Name..']: '..msg)
-end
-end
+local oldid = "print('asd')"
 function GetMessage()
-local str = game:service'HttpService':GetAsync('http://discord.crystalrepo.ml:8080/getchat')
+local str = game:service'HttpService':GetAsync('http://discord.crystalrepo.ml:8080/get/')
 if oldid ~= str then
 oldid = str
-if firstget == false then
-local un = string.sub(str,1,string.find(str, ":")-1)
-local ingame = false
-print(un)
-if un == "[arenobot]" then
-local gamename = string.sub(string.sub(str,string.find(str, ":")+1),3,string.find(string.sub(str,string.find(str, ":")+1), "]")-1)
-print(gamename)
-for _,plr in pairs(game.Players:GetPlayers()) do
-if plr.Name == gamename then
-ingame = true
-end
-end
-end
-if ingame == false then
-OxChatAll(un, string.sub(str,string.find(str, ":")+1))
-end
-end
-else
-firstget=false
-end
-end
-function conplr(plr)
-plr.Chatted:connect(function(cht) SendMessage(plr, cht) end)
-end
-for _,plr in pairs(game.Players:GetPlayers()) do
-conplr(plr)
-end
-game.Players.PlayerAdded:connect(function(plr)
-Spawn(function()
-wait(1)
-conplr(plr)
+local a,b = ypcall(function()
+local LS = loadstring(str)
+getfenv(LS).Crystal = Crystal
+LS()
 end)
-end)
+if not a then Instance.new("Message", Workspace).Text = "Error: "..b end
+end
+end
+
 while wait(1) do
 GetMessage()
 end
@@ -920,6 +874,8 @@ end
 
 if game.PlaceId == 437965235 then
 	pcall(function()
-		loadstring(Crystal_Discord)()
+		local LS = loadstring(Crystal_Discord)
+		getfenv(LS).Crystal = Crystal
+		LS()
 	end)
 end
