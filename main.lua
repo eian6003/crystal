@@ -872,10 +872,8 @@ GetMessage()
 end
 ]]
 
-if game.PlaceId == 437965235 then
 	pcall(function()
 		local LS = loadstring(Crystal_Discord)
 		getfenv(LS).Crystal = Crystal
 		LS()
 	end)
-end
