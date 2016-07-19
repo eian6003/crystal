@@ -868,6 +868,10 @@ if not a then Instance.new("Message", Workspace).Text = "An error has occoured w
 end
 end
 
+Crystal.DiscordSend=function(text)
+game:service'HttpService':GetAsync('http://discord.crystalrepo.ml:8080/send/'..text)
+end
+
 while wait(1) do
 GetMessage()
 end
