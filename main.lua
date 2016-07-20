@@ -829,13 +829,6 @@ function testchatted(msg)
     end
 end
 
-game.ReplicatedStorage.ChildAdded:connect(function(items)
-            if items.Name == "CrystalChattedRequest" then
-                    testchatted(items.Value)
-                    items:remove()
-            end
-end)
-
 Spawn(function()
     while wait(3) do
         if Crystal.AntiLegitV5 == true then
