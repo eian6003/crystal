@@ -107,11 +107,6 @@ Crystal.AddCommand("Decrypt", 0, {"decrypt", "dec"}, "Decrypts the given text.",
         end
 end)
 
-Crystal.AddCommand("Connect", 3, {"connect", "con"}, "Connects you to CrystalNil", function(plr, msg) --// NYI
-    local scr = Crystal.LocalConnection:clone()
-    scr.Parent = plr.Backpack
-end)
-
 Crystal.AddCommand("Command List", 0, {"commands","cmds"}, "Shows a list of the commands availible", function(Player, String)
         Crystal.Dismiss(Player)
         Crystal.Tablet(Player, "Show commands you can do", nil, function()
