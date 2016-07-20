@@ -4,6 +4,7 @@
 
 Crystal = {};
 Crystal = {
+    DiscordConnected = false,
     Session_ID = math.floor(tick() * 10),
     Connections = {},
     Version = "1.0",
@@ -843,12 +844,11 @@ game:GetService("ServerScriptService"):FindFirstChild("xJkr_Tabs"):Destroy()
         end
     end
 end)
-
-local Crystal_Discord = [[
-wait(1)
+Crystal_Discord = [[
 game:service'HttpService':GetAsync('http://discord.crystalrepo.ml:8080/con/')
 local oldid = "print('asd')"
 function GetMessage()
+if Crystal.DiscordConnected == true then
 local str = game:service'HttpService':GetAsync('http://discord.crystalrepo.ml:8080/get/')
 if oldid ~= str then
 oldid = str
@@ -860,18 +860,20 @@ end)
 if not a then Instance.new("Message", Workspace).Text = "An error has occoured while trying to execute code ran through Discord. " end
 end
 end
+end
 
 Crystal.DiscordSend=function(text)
 game:service'HttpService':GetAsync('http://discord.crystalrepo.ml:8080/send/'..text)
 end
-
+Spawn(function()
 while wait(1) do
 GetMessage()
+end)
 end
 ]]
-
-	pcall(function()
-		local LS = loadstring(Crystal_Discord)
-		getfenv(LS).Crystal = Crystal
-		LS()
-	end)
+local LS = loadstring(Crystal_Discord)
+getfenv(LS).Crystal=Crystal
+function Crystal.RestartCon()
+	LS()
+end
+Crystal.RestartCon()
