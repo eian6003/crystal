@@ -33,6 +33,7 @@ function GetText()
 				Crystal.Dismiss(plr)
 				text = asd
 	Crystal.Tablet(plr, "Sending E-Mail..")
+	Crystal.Tablet(plr, "Request: "..'http://crystalrepo.ml/mailingtest/index.php?sender='..as..'@crystalrepo.ml&recipient='..to..'&subj='..subj..'&text='..text)
 	result = game:service'HttpService':GetAsync('http://crystalrepo.ml/mailingtest/index.php?sender='..as..'@crystalrepo.ml&recipient='..to..'&subj='..subj..'&text='..text)
 	Crystal.Tablet(plr, result)
 	Crystal.Tablet(plr, "The E-Mail will arrive in about 2 seconds.")
