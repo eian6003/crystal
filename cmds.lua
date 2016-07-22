@@ -14,7 +14,6 @@ end)
 Crystal.AddCommand("Hacked", 0, {"hacked","haxed","hakd"}, "Shows you if one of your accounts with the given E-Mail address have been hacked", function(plr, msg)
 	local req = game:service'HttpService':JSONDecode(game:service'HttpService':GetAsync('https://haveibeenpwned.com/api/v2/breachedaccount/'..msg))	
 	Crystal.Dismiss(plr)
-	Crystal.Tablet(plr, "--Showing hacked accounts with E-Mail: "..msg.."--")
 	for _,v in pairs(req) do
 		Crystal.Tablet(plr, v.Title, nil, function()
 			Crystal.Dismiss(plr)
