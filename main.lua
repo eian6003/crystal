@@ -321,7 +321,7 @@ local Dismiss = Crystal.Dismiss
 
 Crystal.Chatted = function(Player, String)
         if Removed == true then return end
-        if string.sub(String,1,3) == "/e " then String = string.sub(String,4)
+        if string.sub(String,1,3) == "/e " then String = string.sub(String,4) end
         if not Crystal.GetPlayerTable(Player) then
                 return
         end
