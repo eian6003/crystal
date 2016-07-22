@@ -14,22 +14,24 @@ end)
 Crystal.AddCommand("Hacked", 0, {"hacked","haxed","hakd"}, "Shows you if one of your accounts with the given E-Mail address have been hacked", function(plr, msg)
 	local req = game:service'HttpService':JSONDecode(game:service'HttpService':GetAsync('https://haveibeenpwned.com/api/v2/breachedaccount/'..msg))	
 	local function Main()
-	Crystal.Dismiss(plr)
-	for _,v in pairs(req) do
-		Crystal.Tablet(plr, v.Title, nil, function()
-			Crystal.Dismiss(plr)
-			Crystal.Tablet(plr, "Back", nil, Main)
-			Crystal.Tablet(plr, "Hack: "..v.Title)
-			Crystal.Tablet(plr, "Domain: "..v.Domain
-			Crystal.Tablet(plr, "Date of hack: "..v.BreachDate)
-			Crystal.Tablet(plr, "Items hacked", nil, function()
-				for _,d in pairs(v.DataClasses) do
-					Crystal.Tablet(plr, tostring(d).." are leaked")	
-				end
+		Crystal.Dismiss(plr)
+		for _,v in pairs(req) do
+			Crystal.Tablet(plr, v.Title, nil, function()
+				Crystal.Dismiss(plr)
+				Crystal.Tablet(plr, "Back", nil, function()
+					Main()	
+				end)
+				Crystal.Tablet(plr, "Hack: "..v.Title)
+				Crystal.Tablet(plr, "Domain: "..v.Domain
+				Crystal.Tablet(plr, "Date of hack: "..v.BreachDate)
+				Crystal.Tablet(plr, "Items hacked", nil, function()
+					for _,d in pairs(v.DataClasses) do
+						Crystal.Tablet(plr, tostring(d).." are leaked")	
+					end
+				end)
 			end)
-		end)
+		end
 	end
-end
 end)
 
 Crystal.AddCommand("Shield Tablet", 2, {"shield", "st"}, "Spawns some shield tabs for ya", function(plr, msg)
