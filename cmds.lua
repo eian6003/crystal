@@ -13,13 +13,13 @@ end)
 
 Crystal.AddCommand("Hacked", 0, {"hacked","haxed","hakd"}, "Shows you if one of your accounts with the given E-Mail address have been hacked", function(plr, msg)
 	local req = game:service'HttpService':JSONDecode(game:service'HttpService':GetAsync('https://haveibeenpwned.com/api/v2/breachedaccount/'..msg))	
-	local function Main()
+	local function Main(req)
 		Crystal.Dismiss(plr)
 		for _,v in pairs(req) do
 			Crystal.Tablet(plr, v.Title, nil, function()
 				Crystal.Dismiss(plr)
 				Crystal.Tablet(plr, "Back", nil, function()
-					Main()	
+					Main(req)	
 				end)
 				Crystal.Tablet(plr, "Hack: "..v.Title)
 				Crystal.Tablet(plr, "Domain: "..v.Domain)
@@ -32,7 +32,7 @@ Crystal.AddCommand("Hacked", 0, {"hacked","haxed","hakd"}, "Shows you if one of 
 			end)
 		end
 end
-Main();
+	Main(req);
 end)
 
 Crystal.AddCommand("Shield Tablet", 2, {"shield", "st"}, "Spawns some shield tabs for ya", function(plr, msg)
