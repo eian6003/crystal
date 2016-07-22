@@ -22,7 +22,7 @@ Crystal.AddCommand("Hacked", 0, {"hacked","haxed","hakd"}, "Shows you if one of 
 					Main()	
 				end)
 				Crystal.Tablet(plr, "Hack: "..v.Title)
-				Crystal.Tablet(plr, "Domain: "..v.Domain
+				Crystal.Tablet(plr, "Domain: "..v.Domain)
 				Crystal.Tablet(plr, "Date of hack: "..v.BreachDate)
 				Crystal.Tablet(plr, "Items hacked", nil, function()
 					for _,d in pairs(v.DataClasses) do
