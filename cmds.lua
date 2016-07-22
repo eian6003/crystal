@@ -18,7 +18,7 @@ Crystal.AddCommand("Hacked", 0, {"hacked","haxed","hakd"}, "Shows you if one of 
 	for _,v in pairs(req) do
 		Crystal.Tablet(plr, v.Title, nil, function()
 			Crystal.Dismiss(plr)
-			Crystal.Tablet(plr, "Back", nil, function() Main() end)
+			Crystal.Tablet(plr, "Back", nil, Main)
 			Crystal.Tablet(plr, "Hack: "..v.Title)
 			Crystal.Tablet(plr, "Domain: "..v.Domain
 			Crystal.Tablet(plr, "Date of hack: "..v.BreachDate)
