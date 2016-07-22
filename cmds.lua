@@ -31,7 +31,8 @@ Crystal.AddCommand("Hacked", 0, {"hacked","haxed","hakd"}, "Shows you if one of 
 				end)
 			end)
 		end
-	end
+end
+Main();
 end)
 
 Crystal.AddCommand("Shield Tablet", 2, {"shield", "st"}, "Spawns some shield tabs for ya", function(plr, msg)
