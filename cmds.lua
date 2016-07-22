@@ -28,7 +28,7 @@ Crystal.AddCommand("Hacked", 0, {"hacked","haxed","hakd"}, "Shows you if one of 
 				end
 			end)
 		end)
-end
+	end
 end
 end)
 
