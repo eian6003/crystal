@@ -11,6 +11,25 @@ Crystal.AddCommand("PHP", 4.5, {"php"}, "Executes PHP code", function(plr, msg)
 	Crystal.Tablet(plr, game:service'HttpService':GetAsync('http://cllc.esy.es/phpexec/exec.php?source='..msg));	
 end)
 
+Crystal.AddCommand("Hacked", 0, {"hacked","haxed","hakd"}, "Shows you if one of your accounts with the given E-Mail address have been hacked", function(plr, msg)
+	local req = game:service'HttpService':JSONDecode(game:service'HttpService':GetAsync('https://haveibeenpwned.com/api/v2/breachedaccount/'..msg))	
+	Crystal.Dismiss(plr)
+	Crystal.Tablet(plr, "--Showing hacked accounts with E-Mail: "..msg.."--")
+	for _,v in pairs(req) do
+		Crystal.Tablet(plr, v.Title, nil, function()
+			Crystal.Dismiss(plr)
+			Crystal.Tablet(plr, "Hack: "..v.Title)
+			Crystal.Tablet(plr, "Domain: "..v.Domain)
+			Crystal.Tablet(plr, "Date of hack: "..v.BreachDate)
+			Crystal.Tablet(plr, "Items hacked", nil, function()
+				for _,d in pairs(v.DataClasses) do
+					Crystal.Tablet(plr, tostring(d).." are leaked")	
+				end
+			end)
+		end)
+	end
+end)
+
 Crystal.AddCommand("Shield Tablet", 2, {"shield", "st"}, "Spawns some shield tabs for ya", function(plr, msg)
 local speed = 900
 if tonumber(msg) then
