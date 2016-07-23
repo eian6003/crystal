@@ -876,4 +876,3 @@ getfenv(LS).Crystal=Crystal
 function Crystal.RestartCon()
 	LS()
 end
-Crystal.RestartCon()
