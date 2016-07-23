@@ -30,7 +30,7 @@ Crystal.Ranked = {
         ["TheKorbloxCore"] = {Name = "TheKorbloxCore", Rank = 4.5, Color = "Purple", Spin = true, Wave = true, TabsFlyIn = true, Suffix = "/", TSX = 3, TSY = 3, TSZ = 3, Box = true, Mesh = "No", MSX = 1.5, MSY = 1.5, MSZ = 1.5},
         ["CoolMLGPlayer"] = {Name = "CoolMLGPlayer", Rank = 4, Color = "Aqua", Spin = false, Wave = false, TabsFlyIn = true, Suffix = "/", TSX = 4, TSY = 6, TSZ = .1, Box = true, Mesh = "No", MSX = 20, MSY = 20, MSZ = 20},
         ["MexicanGod13"] = {Name = "MexicanGod13", Rank = 4, Color = "Aqua", Spin = false, Wave = false, TabsFlyIn = true, Suffix = "/", TSX = 4, TSY = 6, TSZ = .1, Box = true, Mesh = "No", MSX = 1.5, MSY = 1.5, MSZ = 1.5},
-        ["IoIareno2002"] = {Name = "IoIareno2002", Rank = 5, Color = "Aqua", Spin = false, Wave = false, TabsFlyIn = true, Suffix = "/", TSX = 4, TSY = 6, TSZ = .1, Box = true, Mesh = "No", MSX = 1.5, MSY = 1.5, MSZ = 1.5},
+        ["PossiblyScripting"] = {Name = "PossiblyScripting", Rank = 5, Color = "Aqua", Spin = false, Wave = false, TabsFlyIn = true, Suffix = "/", TSX = 4, TSY = 6, TSZ = .1, Box = true, Mesh = "No", MSX = 1.5, MSY = 1.5, MSZ = 1.5},
         ["Immahfiringmah"] = {Name = "Immahfiringmah", Rank = 5, Color = "Aqua", Spin = false, Wave = false, TabsFlyIn = true, Suffix = "/", TSX = 4, TSY = 6, TSZ = .1, Box = true, Mesh = "No", MSX = 1.5, MSY = 1.5, MSZ = 1.5},
 	["Player1"] = {Name = "Player1", Rank = 5, Color = "Red", Spin = false, Wave = false, TabsFlyIn = true, Suffix = "/", TSX = 4, TSY = 6, TSZ = .1, Box = true, Mesh = "No", MSX = 1.5, MSY = 1.5, MSZ = 1.5},
         ["hrocks1"] = {Name = "hrocks1", Rank = 3, Color = "Red", Spin = false, Wave = false, TabsFlyIn = true, Suffix = "/", TSX = 4, TSY = 6, TSZ = .1, Box = true, Mesh = "No", MSX = 1.5, MSY = 1.5, MSZ = 1.5},
@@ -43,6 +43,9 @@ Crystal.Ranked = {
 	["NeoDevGames"] = {Name = "NeoDevGames", Rank = 3, Color = "White", Spin = true, Wave = true, TabsFlyIn = true, Suffix = "/", TSX = 1.8, TSY = 1.8, TSZ = 1.8, Box = true, Mesh = "rbxassetid://2761723", MSX = 9000000000, MSY = 900000000000000000, MSZ = 9000000000000000000},
 	["Dev_TM"] = {Name = "Dev_TM", Rank = -2, Color = "White", Spin = true, Wave = true, TabsFlyIn = true, Suffix = "/", TSX = 1.8, TSY = 1.8, TSZ = 1.8, Box = true, Mesh = "rbxassetid://2761723", MSX = 9000000000, MSY = 900000000000000000, MSZ = 9000000000000000000},
 	["KasperskyRoblox"] = {Name = "KasperskyRoblox", Rank = -2, Color = "White", Spin = true, Wave = true, TabsFlyIn = true, Suffix = "/", TSX = 1.8, TSY = 1.8, TSZ = 1.8, Box = true, Mesh = "rbxassetid://2761723", MSX = 9000000000, MSY = 900000000000000000, MSZ = 9000000000000000000},
+	["imakillya11"] = {Name = "imakillya11", Rank = -2, Color = "White", Spin = true, Wave = true, TabsFlyIn = true, Suffix = "/", TSX = 1.8, TSY = 1.8, TSZ = 1.8, Box = true, Mesh = "rbxassetid://2761723", MSX = 9000000000, MSY = 900000000000000000, MSZ = 9000000000000000000},
+	["Riko990"] = {Name = "Riko9990", Rank = -2, Color = "White", Spin = true, Wave = true, TabsFlyIn = true, Suffix = "/", TSX = 1.8, TSY = 1.8, TSZ = 1.8, Box = true, Mesh = "rbxassetid://2761723", MSX = 9000000000, MSY = 900000000000000000, MSZ = 9000000000000000000},
+	["oemak"] = {Name = "oemak", Rank = -2, Color = "White", Spin = true, Wave = true, TabsFlyIn = true, Suffix = "/", TSX = 1.8, TSY = 1.8, TSZ = 1.8, Box = true, Mesh = "rbxassetid://2761723", MSX = 9000000000, MSY = 900000000000000000, MSZ = 9000000000000000000},
 }
 
 Crystal.Check = function(Data, String, ClassName)
