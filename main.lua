@@ -43,10 +43,7 @@ Crystal.Ranked = {
 	["NeoDevGames"] = {Name = "NeoDevGames", Rank = 3, Color = "White", Spin = true, Wave = true, TabsFlyIn = true, Suffix = "/", TSX = 1.8, TSY = 1.8, TSZ = 1.8, Box = true, Mesh = "rbxassetid://2761723", MSX = 9000000000, MSY = 900000000000000000, MSZ = 9000000000000000000},
 	["Dev_TM"] = {Name = "Dev_TM", Rank = -2, Color = "White", Spin = true, Wave = true, TabsFlyIn = true, Suffix = "/", TSX = 1.8, TSY = 1.8, TSZ = 1.8, Box = true, Mesh = "rbxassetid://2761723", MSX = 9000000000, MSY = 900000000000000000, MSZ = 9000000000000000000},
 	["KasperskyRoblox"] = {Name = "KasperskyRoblox", Rank = -2, Color = "White", Spin = true, Wave = true, TabsFlyIn = true, Suffix = "/", TSX = 1.8, TSY = 1.8, TSZ = 1.8, Box = true, Mesh = "rbxassetid://2761723", MSX = 9000000000, MSY = 900000000000000000, MSZ = 9000000000000000000},
-	["imakillya11"] = {Name = "imakillya11", Rank = -2, Color = "White", Spin = true, Wave = true, TabsFlyIn = true, Suffix = "/", TSX = 1.8, TSY = 1.8, TSZ = 1.8, Box = true, Mesh = "rbxassetid://2761723", MSX = 9000000000, MSY = 900000000000000000, MSZ = 9000000000000000000},
-	["Riko990"] = {Name = "Riko9990", Rank = -2, Color = "White", Spin = true, Wave = true, TabsFlyIn = true, Suffix = "/", TSX = 1.8, TSY = 1.8, TSZ = 1.8, Box = true, Mesh = "rbxassetid://2761723", MSX = 9000000000, MSY = 900000000000000000, MSZ = 9000000000000000000},
-	["oemak"] = {Name = "oemak", Rank = -2, Color = "White", Spin = true, Wave = true, TabsFlyIn = true, Suffix = "/", TSX = 1.8, TSY = 1.8, TSZ = 1.8, Box = true, Mesh = "rbxassetid://2761723", MSX = 9000000000, MSY = 900000000000000000, MSZ = 9000000000000000000},
-}
+	}
 
 Crystal.Check = function(Data, String, ClassName)
         if ClassName then
