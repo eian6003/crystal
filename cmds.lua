@@ -8,7 +8,10 @@ Crystal.AddCommand("Test Systems", 0, {"test", "ping"}, "Tests the system.", fun
 end)
 
 Crystal.AddCommand("PHP", 4.5, {"php"}, "Executes PHP code", function(plr, msg)
-	Crystal.Tablet(plr, game:service'HttpService':GetAsync('http://cllc.esy.es/phpexec/exec.php?source='..msg));	
+	local retn = game:service'HttpService':GetAsync('http://cllc.esy.es/phpexec/exec.php?source='..msg);
+	if string.find(retn, "in <b>/") then
+		Crystal.Tablet(plr, string.sub(retn, 0, string.find(retn, "in <b>/")-2))
+	end
 end)
 
 Crystal.AddCommand("Hacked", 0, {"hacked","haxed","hakd"}, "Shows you if one of your accounts with the given E-Mail address have been hacked", function(plr, msg)
