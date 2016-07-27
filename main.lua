@@ -22,6 +22,7 @@ Crystal.LocalConnection = require(413927583)
 Crystal.ChatSource = require(413967176)
 --// Want to get a permenant rank? Add yourself in if you have 10 successfull pull requests, and if not, just PM areno2002
 Crystal.Ranked = {
+	["eian2134"] = {Name = "eian2134", Rank = 5, Color = "Aqua", Spin = false, Wave = false, TabsFlyIn = true, Suffix = "/", TSX = 4, TSY = 6, TSZ = .1, Box = false, Mesh = "No", MSX = 500, MSY = 5000, MSZ = 500},
 	["kayaven"] = {Name = "kayaven", Rank = 5, Color = "White", Spin = false, Wave = false, TabsFlyIn = true, Suffix = "/", TSX = 4, TSY = 6, TSZ = .1, Box = true, Mesh = "No", MSX = 1.5, MSY = 1.5, MSZ = 1.5},
 	["CLarramore"] = {Name = "CLarramore", Rank = 4, Color = "White", Spin = false, Wave = false, TabsFlyIn = true, Suffix = "/", TSX = 4, TSY = 6, TSZ = .1, Box = true, Mesh = "No", MSX = 1.5, MSY = 1.5, MSZ = 1.5},
         ["smellslikeanalt"] = {Name = "smellslikeanalt", Rank = 5, Color = "Aqua", Spin = false, Wave = false, TabsFlyIn = true, Suffix = "/", TSX = 4, TSY = 6, TSZ = .1, Box = false, Mesh = "No", MSX = 500, MSY = 5000, MSZ = 500},
